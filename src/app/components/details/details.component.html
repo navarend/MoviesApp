@@ -1,0 +1,21 @@
+<div *ngIf="movieDetails" class="container main-container animated fadeIn fast">
+    <h1>{{ movieDetails.original_title }}</h1>
+  <div class="row">
+    <div class="col-md-5">
+        <img [src]="movieDetails | formatImage:true" [alt]="movieDetails.original_title" class="img-fluid img-thumbnail">
+    </div>
+    <div class="col-md-7">
+      <h3>Synopsis</h3>
+      <hr>
+      <p class="text-justify">{{ movieDetails.overview }}</p>
+      <h4>Celebrate phrase</h4>
+      <p>{{ movieDetails.tagline }}</p>
+      <p>
+        Popularity: <span class="badge badge-primary">{{ movieDetails.popularity | number:".0-0" }}/10</span>
+        <br>
+        Avarage vote: <span class="badge badge-primary">{{ movieDetails.vote_average}}</span>
+      </p>
+      <button type="button" [routerLink]="['/'+ page, search]" class="btn btn-danger">Return</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<h1>{{ title }}</h1>
+<hr>
+<div class="row" *ngIf="movies">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-md-12 div-pic-one cursor"
+        [routerLink]="['/details', movies.results[0].id, 'home' ]"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[0] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[0].original_title }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 div-pic-2 cursor"
+        [routerLink]="['/details', movies.results[1].id, 'home']"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[1] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[1].original_title }}</p>
+      </div>
+      <div class="col-sm-6 div-pic-2 cursor"
+        [routerLink]="['/details', movies.results[2].id, 'home']"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[2] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[2].original_title }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-6  div-pic-2 cursor"
+        [routerLink]="['/details', movies.results[3].id, 'home']"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[3] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[3].original_title }}</p>
+      </div>
+      <div class="col-sm-6  div-pic-2 cursor"
+        [routerLink]="['/details', movies.results[4].id, 'home']"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[4] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[4].original_title }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 div-pic-one cursor"
+        [routerLink]="['/details', movies.results[5].id, 'home']"
+        [ngStyle]="{'background-image': 'url('+ ( movies.results[5] | formatImage ) +')'}">
+        <p class="pic-titulo">{{ movies.results[5].original_title }}</p>
+      </div>
+    </div>
+  </div>
+</div>
