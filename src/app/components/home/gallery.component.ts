@@ -11,7 +11,7 @@ export class GalleryComponent implements OnInit {
   @Input('title') title;
 
   constructor() {
-    //console.log(this.movies);
+
    }
 
   ngOnInit() {
