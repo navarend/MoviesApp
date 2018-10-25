@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule, JsonpModule }  from "@angular/http";
 import { FormsModule }  from "@angular/forms";
-import { APP_BASE_HREF }  from "@angular/common";
 
 import { APP_ROUTING } from './app.routes';
 
@@ -31,7 +30,7 @@ import { GalleryComponent } from './components/home/gallery.component';
     FormsModule,
     APP_ROUTING
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
