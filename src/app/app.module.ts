@@ -31,7 +31,7 @@ import { GalleryComponent } from './components/home/gallery.component';
     FormsModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/my/app'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
