@@ -23,9 +23,8 @@ export class DetailsComponent implements OnInit {
       this.page = params['page'];
       this.search = params['search'];
      });
-    this.movieDb.GetMovie(this.idMovie).subscribe( result => {
-      this.movieDetails = result;
-    })
+
+    this.movieDb.GetMovie(this.idMovie).subscribe( result => this.movieDetails = result );
   }
 
 }

@@ -8,7 +8,11 @@ export class FormatImagePipe implements PipeTransform {
   transform(movie: any, poster: boolean = false): any {
     let pathImage:string = "http://image.tmdb.org/t/p/w300";// `http://image.tmdb.org/t/p/w200${movie}`;
     if(poster){
-      pathImage = pathImage + movie.poster_path;
+      if(movie.poster_path){
+        pathImage = pathImage + movie.poster_path;
+      }else{
+        pathImage = "assets/img/no-image.png";
+      }
       return pathImage;
     }
 
