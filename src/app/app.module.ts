@@ -13,6 +13,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FormatImagePipe } from './pipes/format-image.pipe';
 import { GalleryComponent } from './components/home/gallery.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GalleryComponent } from './components/home/gallery.component';
     SearchComponent,
     DetailsComponent,
     FormatImagePipe,
-    GalleryComponent
+    GalleryComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
