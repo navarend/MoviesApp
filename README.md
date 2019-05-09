@@ -1,4 +1,4 @@
-# # Web application MoviesApp
+# Web application MoviesApp
 
 ## In this part contains:
 1. Consume service themoviedb.
