@@ -16,20 +16,20 @@ export class MoviedbService {
 
   GetMostPopularMovies(){
     let url = `${ this.urlMovieDb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`;
-    return this.jsonp.get( url ).pipe(map( res => res.json()));
+    return this.jsonp.get( url ).pipe(map( res =>{ return  res.json(); }));
   }
 
   GetMostPopularMoviesKids(){
     let url = `${ this.urlMovieDb }/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`;
-    return this.jsonp.get( url ).pipe(map(res => res.json()));
+    return this.jsonp.get( url ).pipe(map(res =>{return  res.json();}));
   }
 
   GetMoviesTheatres(){
     let dateStart = new Date;
     let dateFinal = new Date;
     dateFinal.setDate( dateFinal.getDate() + 7 );
-    let startDate = `${ dateStart.getFullYear() }-${ dateStart.getMonth()+1 }-${ dateStart.getDate()}`;
-    let finalDate = `${ dateFinal.getFullYear() }-${ dateFinal.getMonth()+1 }-${ dateFinal.getDate()}`;
+    let startDate = `${ dateStart.getFullYear() }-${ (dateStart.getMonth()+1) <= 9 ? '0' + (dateStart.getMonth() + 1) : dateStart.getMonth() + 1 }-${ (dateStart.getDate()) <= 9 ? '0' + (dateStart.getDate()) : dateStart.getDate() }`;
+    let finalDate = `${ dateFinal.getFullYear() }-${ (dateFinal.getMonth() + 1) <= 9 ? '0' + (dateFinal.getMonth() + 1) : dateFinal.getMonth() + 1 }-${ (dateFinal.getDate()) <= 9 ? '0' + (dateFinal.getDate()) : dateFinal.getDate()}`;
     let url = `${ this.urlMovieDb }/discover/movie?primary_release_date.gte=${ startDate }&primary_release_date.lte=${ finalDate }&api_key=${ this.apiKey }&callback=JSONP_CALLBACK`;
     return this.jsonp.get( url ).pipe(map( res => res.json()));
   }
