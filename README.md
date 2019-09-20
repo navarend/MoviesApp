@@ -1,6 +1,6 @@
 # Web application MoviesApp
 
-## In this part contains:
+## This part contains:
 1. Consume service themoviedb.
 
 Remember run ```npm to install``` the libraries.
